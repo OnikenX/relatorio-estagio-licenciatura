@@ -1,0 +1,269 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm]{geometry}
+\setlength{\headheight}{15pt}
+
+\usepackage[utf8]{inputenc}
+\usepackage{xspace}
+\usepackage[portuguese]{babel}
+
+% o comando say para referenciar texto
+\usepackage{dirtytalk}
+
+% melhor code blocks
+\usepackage{listings}
+
+% imagens floatuantes ao lado de texto
+\usepackage{wrapfig}
+
+
+% \usepackage{url}
+
+% %% Define a new 'leo' style for the package that will use a smaller font.
+% \makeatletter
+% \def\url@leostyle{%
+%   \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+% \makeatother
+% %% Now actually use the newly defined style.
+% \urlstyle{leo}
+
+%to ocupy all the space
+% \newlength{\textundbildtextheight}
+% \newcommand{\textundbild}[2]{\settototalheight\textundbildtextheight{\vbox{#1}}[#1]
+
+%floats figures to stay in the place where they are declared(use H to use it exemple:
+%\begin{figure}[H] 
+%)
+\usepackage{float}
+
+%para tabelas ajustadas
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{array}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%para que o primeiro paragrafo indente
+\usepackage{indentfirst}
+
+%para for loops
+\usepackage{pgffor}
+
+%para checar paginas em branco e virar
+\usepackage[strict]{changepage}
+
+%Fontes especias de matemática
+
+\usepackage{amsfonts}
+
+%hide hidelinks esconde os links There were undefined references \subsection{Arquitetura}de terem bordas feias
+% backref para ter links entre refenrecias e toc
+% hidelinks para nao aparecer a caixa azul
+\usepackage[hidelinks]{hyperref}
+% pacote para os headers e footers fixes
+\usepackage{fancyhdr}
+
+%para poder ter os compactitem lists
+\usepackage{paralist}
+
+%ter acesso a imagens
+\usepackage{graphicx}
+\usepackage{svg}
+\graphicspath{{images/}{anexos/}}
+
+\usepackage{nicematrix}
+
+%printar pdfs
+\usepackage{pdfpages}
+
+%obter o nome de onde estao as referencias
+\usepackage{nameref}
+
+% package para tirar notas
+\usepackage{easy-todo}
+
+%cores lol
+\usepackage{color, colortbl}
+
+%para referenciar com o tipo
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{figura}{figuras}
+\crefname{wrapfigure}{figura}{figuras}
+\crefname{table}{tabela}{tabelas}
+\crefname{chapter}{capítulo}{capítulos}
+\crefname{subsection}{subsecção}{subsecções}
+
+
+
+%using markdown
+\usepackage[hashEnumerators,smartEllipses]{markdown}
+%for instructions see https://pt.overleaf.com/learn/how-to/Writing_Markdown_in_LaTeX_Documents
+
+\usepackage{csquotes}
+\usepackage{setspace}
+\usepackage{afterpage}
+\usepackage{longtable}
+% \usepackage{tightlist}
+% CORES
+
+%tratar das cores
+\usepackage{xcolor}
+\usepackage{pagecolor,lipsum}% http://ctan.org/pkg/{pagecolor,lipsum}
+% \usepackage{memoir}
+% definição de uma cor
+% \definecolor{name}{model}{color-spec}
+\definecolor{aquamarine}{rgb}{0, 181, 190}
+
+% meter o fundo em pretos e os caracteres em branco
+\pagecolor{black}
+\color{white}
+\newcommand{\linkcolor}{aquamarine}
+%link color for white mode
+% \newcommand{\linkcolor}{blue}
+
+\usepackage{xcolor}
+
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{referencias.bib} %Import the bibliography file
+% -------- Acrónimos ------------- %
+
+%para os acrónimos
+% usar \newacronym{⟨label⟩}{⟨abbrv⟩}{⟨full⟩} para fazer um
+\usepackage[acronym,automake]{glossaries}
+\makeglossaries
+% \usepackage{glossary-longbooktabs}
+
+%change the size of captions
+\usepackage[font=small]{caption}
+\captionsetup[wrapfigure]{font=scriptsize,justification=centering}
+
+%\newglossary[slg]{glos}{Glossário}
+
+\input{subpartes/siglas.tex}
+
+% ----------- MACROS --------------- %
+
+\newcommand{\myemptypage}{
+    \newpage
+    \null
+    \thispagestyle{empty}
+    %\addtocounter{page}{-1}
+    \newpage
+}
+
+\newcommand{\nextpage}{
+\clearpage
+\newpage
+\mbox{~}
+\clearpage
+\newpage
+}
+
+\newcommand{\clearforchapter}{\clearpage~\thispagestyle{cleared}\cleartorecto}
+
+\newcommand{\checkandnewpageifeven}{
+    \newpage
+    \checkoddpage{}
+    \ifoddpage{} \else \nextpage{} \fi
+}
+
+\newcommand{\lk}[2]{\href{#1}{\textcolor{\linkcolor}{#2}}}
+
+\newcommand{\chapterf}[1]{
+    \checkandnewpageifeven{}
+    \chapter{#1}
+    \thispagestyle{fancy}
+}
+
+\newcommand{\mytitle}{Game Chaining}
+\newcommand{\gamechaining}{\textit{\mytitle{}}}
+
+% set dos headers e footers
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\mytitle{}}
+\rhead {\thechapter}
+\fancyfoot[LE,RO]{\thepage}
+% \rfoot{\thepage}
+
+%set do espaçamento entre linhas
+\setstretch{1.25}
+%set indentação
+\setlength\parindent{0.75cm}
+
+%set font family to arial
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+% \newcommand\todo[1]{\textbf{\textcolor{red}{#1}}}
+% comment this to hide todos
+% \renewcommand\todo[1]{}
+
+% troca os cites por subercites
+% \renewcommand{\cite}[1]{\supercite{#1}}
+% mete os parentices retos nos supercites
+% \DeclareCiteCommand{\supercite}[\mkbibsuperscript]
+%   {\iffieldundef{prenote}
+%      {}
+%      {\BibliographyWarning{Ignoring prenote argument}}%
+%    \iffieldundef{postnote}
+%      {}
+%      {\BibliographyWarning{Ignoring postnote argument}}}
+%   {\usebibmacro{citeindex}%
+%    \bibopenbracket\usebibmacro{cite}\bibclosebracket}
+%   {\supercitedelim}
+%   {}
+
+
+\addto\captionsportuguese{% Replace "english" with the language you use
+  \renewcommand{\contentsname}%
+    {Índice}%
+}
+
+
+
+% transforma todos os gls para itálico
+\renewcommand{\glstextformat}[1]{\textit{#1}}
+
+% ======== APAGAR OS TODOS =============
+% \renewcommand\todo[1][]{}
+% \renewcommand\listoftodos{}
+
+% --------  DOCUMENTO
+
+\begin{document}
+\pagenumbering{roman}
+\input{subpartes/0_0_titulo.tex}
+\myemptypage
+\setcounter{page}{1}
+% \checkandnewpageifeven
+\input{subpartes/0_1_agradecimentos.tex}
+% \newpage
+\checkandnewpageifeven
+\input{subpartes/0_2_resumo.tex}
+% \newpage
+\checkandnewpageifeven
+\input{subpartes/0_3_abstract.tex}
+% \newpage
+
+\input{subpartes/0_4_lists.tex}
+
+% CONTEUDOS PRINCIPAIS
+\newpage
+\checkoddpage{}
+\pagenumbering{arabic}
+\ifoddpage
+    \setcounter{page}{1}
+\else
+    \setcounter{page}{0}
+    \myemptypage
+\fi
+
+\input{subpartes/1_introduzao.tex}
+\input{subpartes/2_0_blockchain.tex}
+\input{subpartes/3_twitter.tex}
+\input{subpartes/4_BPMs.tex}
+\input{subpartes/5_conclusoes.tex}
+
+\printbibliography[heading=bibintoc]
+\label{bibliografia}
+\input{subpartes/6_anexos.tex}
+
+\end{document}

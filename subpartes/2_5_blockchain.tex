@@ -1,0 +1,46 @@
+\newpage
+\section{Conclusões}
+\label{sec:blockchain_conclusao}
+Após este estudo consideraram-se os seguintes conceitos, estudados em detalhe e abordados anteriormente, para possibilitar a implementação do projeto em causa:
+
+\begin{itemize}
+
+      \item
+            \textit{Rust} - como a linguagem de programação pelas razões já referidas em \ref{subsection:rust}
+
+      \item
+            \acrshort{pos} - verificação de transações, em que se podem atribuir itens do inventario do utilizador em \textit{stake} \textsuperscript{\ref{concenso}}
+      \item
+            \textit{Sharding} - para poupar utilização de memória distribuindo a \textit{blockchain} entre múltiplos dispositivos
+            \textsuperscript{\ref{sharding}}
+
+      \item
+            \textit{libp2p} - uma biblioteca a utilizar para a \textit{stack} de \textit{networking} ser mais facilmente desenvolvida
+
+      \item
+            \textit{zstd} - método de compressão em tempo real desenvolvido pelo \textit{Facebook} para rápidas descompressões \cite{zstd_github}, podendo ajudar a diminuir o tamanho que a \textit{blockchain} ocupa no disco caso seja necessário.
+      \item
+            \textit{Hole punching} - para não obrigar os utilizadores(ou pelo menos não todos) a terem portas abertas 
+
+      \item
+            \acrshort{ipc-compute} ou \acrshort{abi} - para comunicação com o jogo propriamente dito.
+
+\end{itemize}
+
+Com as opções apresentadas pode-se concluir que é possível construir o \gamechaining{} (nome dado ao projeto referido no \hyperref[anexo:A]{anexo A}) com tecnologias e algoritmos já existentes facilitando o seu desenvolvimento. 
+
+Existem algumas preocupações sobre o espaço que pode ser ocupado no disco e os requerimentos de \textit{networking} mas podem-se limitar essas preocupações com \textit{sharding}\textsuperscript{\ref{sharding}} e compressão para resolver o problema de armazenamento e 
+
+\textit{hole punching} para não obrigar todos os utilizadores a modificar as suas redes.
+
+Estas modificações podem trazer preocupações pelo facto de obrigarem a um certo nível de centralização em que iria existir a necessidade de confiar num certo número de indivíduos para que funcionasse. Isto contradiz o requisito R3 mas é aceitável pois é um conceito parecido com jogos com \textit{hosts}, como \textit{Minecraft}, em que um utilizador iria ter a responsabilidade de ter um servidor pronto para outros jogarem, o que remove a centralização de uma empresa única. 
+
+As propriedades do \gamechaining{} consideradas anteriormente ajudariam os jogadores menos proficientes tecnicamente a jogar enquanto que outros membros da comunidade mais capazes poderiam ter benefícios no jogo por ajudar a manter o jogo activo. Também podem ser feitos serviços em que um jogador aloca um espaço num servidor externo para ter a sua própria instância do serviço do jogo, como fazem algumas empresas como a \textit{Azure} e o \textit{Linode} com servidores de \textit{Minecraft}, por exemplo.
+
+Blockchain pode ajudar em termos de estabilidade do mundo em que podem existir múltiplos \textit{hosts} para o mesmo mundo e existe a verificação e registo de mudança de dados o que pode servir como um \gls{anticheat}, podendo se criar mundos ativos muito maiores do que seria possível num jogo como \textit{Minecraft} ou outros que têm um único servidor.
+
+Uma pesquisa intensa ajudou em muito a obter informação de como seria a aplicação desta tecnologia neste contexto. Porém, existem ainda várias questões práticas que se devem considerar e rever. Por exemplo,  ainda existem duvidas quanto à existência de servidores da comunidade para resolver os problemas referidos anteriormente.
+
+Pelo facto de este ser um projeto mais extenso do que o esperado, como se pode observar comparando a proposta de estágio e os requisitos descritos neste capítulo, o projeto tornou se mais amplo do que inicialmente planeado, isso porque o interesse aumentou ao longo da pesquisa e nas sucessivas reuniões. 
+
+Como não se podia concluir com certeza se haveria uma implementação para apresentar no final de estágio decidiu-se mover o estagiário para outros projetos com uma estrutura mais comum para implementar.

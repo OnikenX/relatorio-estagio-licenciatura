@@ -1,0 +1,151 @@
+\chapterf{Introdução}
+
+
+\label{chap:introducao}
+
+Na área dos jogos de vídeo várias são as tecnologias exploradas de forma a melhorar as experiências dos utilizadores ao jogar.
+
+O trabalho apresentado no presente relatório representa também uma contribuição nesta temática. Consiste numa sumarização do
+trabalho desenvolvido, tanto a nível teórico como prático, no estágio curricular no âmbito da unidade curricular de Projeto ou Estágio na empresa
+Nerd Monkeys, de 1 de março de 2021 a 18 de julho de 2021, para efeitos de conclusão da
+Licenciatura de Engenharia Informática, do \acrfull{isec}.
+
+Neste capítulo, é apresentado o contexto do estágio, os seus objetivos,
+entidades envolvidas na realização do mesmo, bem como a estrutura do relatório.
+
+\section{Instituto Superior de Engenharia de Coimbra}
+
+O \acrshort{isec} é uma das
+unidades constituintes do \gls{ipc-education}. A
+missão do \gls{ipc-education} corresponde à criação, transmissão e difusão de cultura, ciência e tecnologia. Para isso, é ministrada formação de nível superior para o exercício de atividades profissionais no domínio da Engenharia,
+promovendo o desenvolvimento da região em que se insere. Foi fundado em
+1974, tendo sido adicionado ao \acrshort{ipc-education} em 1988.
+
+O \acrshort{ipc-education} tem uma variada oferta formativa disponível ao nível de mestrados, licenciaturas e \acrfull{ctesp}. O \acrfull{deis} dedica-se, desde 1989, à formação, investigação, desenvolvimento e prestação de serviços na área da Engenharia Informática. O \acrshort{isec} prima pelo caráter prático dos cursos que ministra, traduzido pelo elevado número de aulas laboratoriais, projetos e estágios o que, aliado à qualidade científica e pedagógica, resulta num elevado índice de empregabilidade.
+\cite{isec_wiki}
+
+\section{Nerd Monkeys}
+
+A Nerd Monkeys foi fundada em 2013 por Diogo Vasconcelos e Filipe Duarte Pina \cite{nerdmonkeys_interview_eurogamerpt}. A empresa desenvolve e publica jogos, pelo que está sempre a investir em novas ideias para um jogo, tanto em histórias como tecnologias e paradigmas.
+
+Como exemplo de jogos desenvolvidos na \textit{Nerd Monkeys} podem ser citados os jogos  ``\textit{Inspector Zé e Robot Palhaço em: Crime no Hotel Lisboa}'' (2014), ``\textit{Inspector Zé e Robot Palhaço em: O Assassino do Intercidades}'' (2018), ``\textit{Out of Line}'' (2021) e o ``\textit{Monkey Split}'' (2021) \cite{nerd_games_steam} publicados na Steam, uma plataforma de distribuição e venda de jogos.
+
+A empresa também tem um histórico de adaptar jogos para a \gls{switch}, dos quais são exemplos os jogos ``\textit{Inspector Zé e Robot Palhaço em: Crime no Hotel Lisboa}''\cite{ze_eshop}, 
+e um jogo de outro programador publicado pela \textit{Nerd Monkeys} cujo o nome do jogo é ``\textit{Traffix}'' \cite{traffix_eshop}. Porém, uma das áreas que a empresa quer explorar é a aplicação de \textit{blockchain} em jogos \textit{online}. Neste sentido, o estágio decorre no contexto da pesquisa de novas tecnologias para usar em novos jogos, neste caso especifico utilizando \textit{blockchain}.
+
+\section{Proposta de Estágio}
+
+A proposta de estágio (\hyperref[anexo:A]{anexo A}) elaborada pela \textit{Nerd Monkeys} visou a investigação da aplicação de \textit{blockchain} em jogos de vídeo, com a adição da utilização do motor de jogo \textit{Unreal Engine} com \textit{C++}.
+
+O planeamento do desenvolvimento ficou divido nas seguintes tarefas:
+
+\begin{itemize}
+    \item T1 - Pesquisa e experiência prática – Durante este período o estagiário deverá realizar
+    uma pesquisa extensiva sobre todas as componentes envolvidas no projeto e
+    experimentação prática para validar os resultados da pesquisa. (5 semanas)
+
+    \item T2 - Criação de ferramentas - tendo em vista as etapas T3 e T4. (4 semanas)
+
+    \item T3 - Criação de protótipo – Criar um protótipo com base na pesquisa desenvolvida com um objetivo definido pelo orientador.(3 semanas)
+
+     \item T4 - Desenvolvimento do videojogo – Com base no protótipo e ferramentas criadas deverá ser desenvolvido um videojogo em, pelo menos, formato de vertical \textit{slice} (demonstração jogável de todas as mecânicas). (10 semanas)
+
+    \item T5 - Elaboração de relatório de estágio. (2 semanas)
+\end{itemize}
+
+O planeamento temporal das várias fases é apresentado na \cref{tab:diagrama-temporal}.
+
+\begin{table}[H]
+  \centering
+  \footnotesize
+  \def\arraystretch{2}
+  \setlength\tabcolsep{3pt}
+  \begin{tabularx}{\textwidth}
+  {l*{24}{c}}
+  \multicolumn{25}{c}{\textbf{Semanas}}\\
+    &
+    \multicolumn{1}{c}{01}&
+    \multicolumn{1}{c}{02}&
+    \multicolumn{1}{c}{03}&
+    \multicolumn{1}{c}{04}&
+    \multicolumn{1}{c}{05}&
+    \multicolumn{1}{c}{06}&
+    \multicolumn{1}{c}{07}&
+    \multicolumn{1}{c}{08}&
+    \multicolumn{1}{c}{09}&
+    \multicolumn{1}{c}{10}&
+    \multicolumn{1}{c}{11}&
+    \multicolumn{1}{c}{12}&
+    \multicolumn{1}{c}{13}&
+    \multicolumn{1}{c}{14}&
+    \multicolumn{1}{c}{15}&
+    \multicolumn{1}{c}{16}&
+    \multicolumn{1}{c}{17}&
+    \multicolumn{1}{c}{18}&
+    \multicolumn{1}{c}{19}&
+    \multicolumn{1}{c}{20}&
+    \multicolumn{1}{c}{21}&
+    \multicolumn{1}{c}{22}&
+    \multicolumn{1}{c}{23}&
+    \multicolumn{1}{c}{24}
+    \tabularnewline 
+    T1 &
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\\
+    T2 &
+    &&&&&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&\\
+    T3 &
+    &&&&&&&&&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\\
+    T4 &
+    &&&&&&&&&&&&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&
+    \cellcolor{blue}{}&\cellcolor{blue}{}&\\
+    T5 &
+    &&&&&&&&&&&&&&&&&&&&&&
+    \cellcolor{blue}{}&\cellcolor{blue}{}
+  \end{tabularx}
+  \caption{Diagrama de Gantt representativo do planeamento temporal}
+  \label{tab:diagrama-temporal}
+\end{table}
+
+\section{Objetivos e Plano de Trabalhos}
+
+Os objetivos iniciais deste trabalho, consistiam em aferir as capacidades da tecnologia \textit{blockchain} para além da sua utilização comum atual e aplicação concreta em jogos de vídeo com a subsequente criação de um prototipo funcional. Porém, foi considerado de interesse que o trabalho fosse principalmente de pesquisa, dadas as enormes capacidades e potencialidades desta tecnologia e assim aferir quais as melhores opções para a aplicar no contexto da empresa.
+
+\section{Estrutura do relatório}
+
+Este documento, para além da introdução, é composto pelos seguintes capítulos:
+
+\begin{itemize}
+    \item \Cref{chap:introducao} - Este é o primeiro capítulo, começa com a descrição da entidade de acolhimento e da instituição de ensino, seguindo-se a apresentação da proposta de estágio, os objetivos definidos e plano de trabalhos. Termina com esta secção que descreve a estrutura do relatório, bem como, a metodologia e notas extras.
+    
+    \item \Cref{chap:blockchain} - Neste capítulo é realizada a apresentação da primeira parte do estágio, onde foi realizada pesquisa sobre o tema de \textit{blockchain}. É realizada a descrição das várias tecnologias relacionadas com \textit{blockchain}, bem como análises e conclusões de como estas podem ser aplicadas num jogo.
+
+    \item \Cref{chap:ac7ion} - Este capítulo apresenta a segunda parte do estágio, onde é relatado o desenvolvimento de um programa denominado \textit{AC7ION}. A função deste programa é a de receber \textit{tweets} para serem enviados a um cliente que faz comunicação com jogos.
+
+    \item \Cref{chap:bpm} - Este capítulo apresenta a terceira parte do estágio, onde foi desenvolvido um detector de batimentos cardíacos, para a \textit{Nintendo Switch}, que usa o \acrfull{ir} Sensor desta para os detetar.
+
+    \item \Cref{chap:conclusao} - Este capítulo trata da conclusão. No mesmo são tecidas algumas ideias finais sobre o trabalho desenvolvido e é analisado o sucesso do trabalho realizado.
+\end{itemize}
+
+Em complemento e como suporte de informação a estes capítulos, são também apresentadas \hyperref[bibliografia]{as referências bibliográficas} e um
+ \hyperref[chap:anexos]{anexo}, estes podem ser vistos no final do documento.
+
+\section{Metodologia e Notas Extras}
+
+Os projetos aqui apresentados foram todos desenvolvidos como projetos internos da \textit{Nerd Monkeys}. Em projetos internos da empresa os membros das equipas têm grande liberdade criativa, o que significa que todos têm a liberdade de discutir e mudar o rumo do que está a ser desenvolvido se assim o líder do projeto concordar e for bem justificado.
+
+Sendo que a metodologia de desenvolvimento era ágil e comparável com a \textit{Extreme Programming}, em que existe constante \textit{feedback}, reuniões todos os dias, em que a equipa está em constante contacto.
+
+Os requisitos descritos nos vários capítulos foram inseridos com o propósito de definir os objetivos do trabalho a realizar. Tendo isso em conta, esses requisitos servem apenas como guias/
+ideias base, pelo que podem não ser seguidos à risca durante o processo de desenvolvimento.
+
+
